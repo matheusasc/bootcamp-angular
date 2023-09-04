@@ -1,0 +1,15 @@
+<h3>Regiões</h3>
+
+<div *ngIf="isLoading; else regioes">
+  <app-loading></app-loading>
+
+</div>
+
+<ng-template #regioes>
+  <div *ngFor="let regiao of listaRegioes">
+    <p> <b>Nome:</b> {{ regiao.nome }}</p>
+    <p> <b>Sigla:</b> {{ regiao.sigla }}</p>
+    <button type="button" (click)="verEstados(regiao)">VER ESTADOS</button>
+    <hr>
+  </div>
+</ng-template>

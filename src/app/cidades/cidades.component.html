@@ -1,0 +1,16 @@
+<div *ngIf="isLoading; else cidades">
+  <app-loading></app-loading>
+</div>
+
+<ng-template #cidades>
+  <div>
+    <h3>Cidades da Estado {{estado.nome}}</h3>
+    <hr>
+
+    <div *ngFor="let cidade of listaCidades">
+      <app-card-cidade
+        [cidade]="cidade"
+      ></app-card-cidade>
+    </div>
+  </div>
+</ng-template>
